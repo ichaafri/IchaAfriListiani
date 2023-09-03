@@ -1,0 +1,23 @@
+const int led =13;
+const int button = 2; 
+int sttb = LOW;
+bool ledON = false; 
+
+void setup() 
+{
+  pinMode(led, OUTPUT);
+  pinMode(button, INPUT_PULLUP);
+  
+}
+
+void loop() 
+{
+if (digitalRead(button) == LOW){
+delay(50);
+if (digitalRead(button) == LOW){
+  ledON = !ledON;
+      digitalWrite(led, ledON ? HIGH : LOW);
+      while (digitalRead(button) == LOW);
+  }
+}
+}
